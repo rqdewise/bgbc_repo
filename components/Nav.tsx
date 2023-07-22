@@ -14,11 +14,13 @@ import Image from "next/image";
 
 const links = [
     {
+        id:1,
         name: "About Us",
         href: "./about",
         Icon: "",
     },
     {
+        id:2,
         name: "Connect",
         href: "./contact",
         Icon: "",
@@ -59,7 +61,7 @@ export default function Nav() {
             >
                 <ul className="flex flex-col lg:flex-row-reverse list-none lg:ml-auto">
                     {links.map( (link) => (
-                        <li className="flex items-center">
+                        <li key= {link.id} className="flex items-center">
                             <Link 
                                 href={link.href}
                                 className="hover:text-blueGray-500 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
