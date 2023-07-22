@@ -20,15 +20,15 @@ export default function HeroBanner() {
                             href="./about"
                             className="get-started text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-gray-600 active:bg-lightBlue-600 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
                             >
-                        Learn More
+                            
                         </Link>
-                        <Link
-                        href="./connect"
+                        <a
+                        href="https://www.facebook.com/bordergatebaptist/videos"
                         className="github-star ml-1 text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-sky-500 active:bg-blueGray-600 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
                         target="_blank"
                         >
-                        Connect With Us
-                        </Link>
+                            Watch Live Sermon 
+                        </a>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { Facebook, Twitter, Github} from "lucide-react"
+import { Facebook, Twitter, Youtube} from "lucide-react"
 
 export default function Footer() {
   return (
@@ -34,18 +34,20 @@ export default function Footer() {
                 >
                   <Twitter />
                 </button>
-                <button
+                <a
+                  href="https://www.facebook.com/bordergatebaptist/"
                   className="bg-white text-sky-600 shadow-lg font-normal p-2 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
                   type="button"
                 >
                   <Facebook />
-                </button>
-                <button
+                </a>
+                <a
+                  href="https://www.youtube.com/@restenilo"
                   className="bg-white text-zinc-800 shadow-lg font-normal p-2 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
                   type="button"
                 >
-                  <Github />
-                </button>
+                  <Youtube />
+                </a>
               </div>
             </div>
             <div className="w-full lg:w-6/12 px-4">
