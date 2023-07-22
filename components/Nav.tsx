@@ -3,13 +3,13 @@ import Link from "next/link"
 import React from "react"
 import { Menu } from "lucide-react"
 
-import {
-    useParams,
-    usePathname,
-    useSelectedLayoutSegments,
-} from "next/navigation"
+// import {
+//     useParams,
+//     usePathname,
+//     useSelectedLayoutSegments,
+// } from "next/navigation"
 
-import { ReactNode, useEffect, useMemo, useState } from "react";
+// import { ReactNode, useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 
 const links = [
