@@ -16,13 +16,19 @@ const links = [
     {
         id:1,
         name: "About Us",
-        href: "./about",
+        href: "./confession-of-faith",
         Icon: "",
     },
     {
         id:2,
-        name: "Connect",
-        href: "./contact",
+        name: "From The Pastor",
+        href: "./from-pastor",
+        Icon: "",
+    },
+    {
+        id:3,
+        name: "Our Story",
+        href: "./our-story",
         Icon: "",
     }
 ]
