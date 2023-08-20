@@ -2,6 +2,7 @@
 import Link from "next/link"
 import React from "react"
 import { Menu } from "lucide-react"
+import { Button } from "@/components/ui/button"
 
 // import {
 //     useParams,
@@ -18,16 +19,36 @@ const links = [
         name: "About Us",
         href: "./confession-of-faith",
         Icon: "",
-    },
-    {
-        id:2,
-        name: "From The Pastor",
-        href: "./from-pastor",
-        Icon: "",
+        nested: [
+            {
+                id:2,
+                name: "Our Story",
+                href: "./our-story",
+                Icon: "",
+            },
+            {
+                id:3,
+                name: "From Our Pastor",
+                href: "./from-pastor",
+                Icon: "",
+            },
+            {
+                id:4,
+                name: "Time And Location",
+                href: "./time-location",
+                Icon: "",
+            },
+            {
+                id:5,
+                name: "Mission And Vision",
+                href: "./mission-vision",
+                Icon: "",
+            },
+        ],
     },
     {
         id:3,
-        name: "Our Story",
+        name: "Connect",
         href: "./our-story",
         Icon: "",
     }
@@ -41,7 +62,7 @@ export default function Nav() {
             <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
                 <Link
                 href="/"
-                className=" text-blueGray-700 text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase"
+                className=" text-blueGray-700 text-lg font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase"
                 >
                     <Image
                         src="/images/bgbc_logo.png"
@@ -65,25 +86,44 @@ export default function Nav() {
                 }
                 id="example-navbar-warning"
             >
-                <ul className="flex flex-col lg:flex-row-reverse list-none lg:ml-auto">
+                 <ul className="flex flex-col lg:flex-row-reverse list-none lg:ml-auto text-lg">
                     {links.map( (link) => (
-                        <li key= {link.id} className="flex items-center">
+                        <li key= {link.id} className="group relative items-center">
+                            <>
                             <Link 
                                 href={link.href}
-                                className="hover:text-blueGray-500 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+                                className="hover:text-slate-500 text-slate-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
                             > 
-                            {!link.Icon 
-                                ? " " :
-                                <Image 
-                                    src={link.Icon}
-                                    width={20}
-                                    height={20}
-                                    alt={link.name}
-                                />
-                            }
-                            {link.name}
+                                {!link.Icon 
+                                    ? " " :
+                                    <Image 
+                                        src={link.Icon}
+                                        width={20}
+                                        height={20}
+                                        alt={link.name}
+                                    />
+                                }
+                                {link.name}
                             </Link>
-                        </li>
+                                    {!(link.nested)? '':
+                                    <ul className={"list-none group-hover:block bg-white p-4 lg:hidden lg:absolute lg:left-[-10px] lg:top-7 lg:shadow-md  lg:min-w-max " + (navbarOpen? "block":"hidden") }>
+                                        {
+                                            link.nested.map(
+                                                nestLink => (
+                                                    <li key= {nestLink.id} className="text-sm font-semibold flex flex-row my-2">
+                                                        <Link
+                                                            href={nestLink.href}
+                                                        >
+                                                            {nestLink.name}
+                                                        </Link>
+                                                    </li>
+                                                )
+                                            )
+                                        }
+                                    </ul>
+                                    }
+                            </>                          
+                        </li> 
                     ))}
                 </ul>
             </div>

@@ -1,8 +1,9 @@
 import fs from  'fs'
 import { join } from 'path'
-import matter from 'gray-matter'
-import { remark } from 'remark'
-import remarkHtml from 'remark-html'
+import { compileMDX } from 'next-mdx-remote/rsc'
+import Iframes from '@/components/Iframes'
+import Video from '@/components/VideoIframe'
+
 
 const pagesDir = join(process.cwd(), '_pages')
 
@@ -29,20 +30,25 @@ export function getPageSlugs(){
 export async function getPageBySlug(slug: string){
     const realSlug = slug.replace(/\.mdx$/, '')
     const fullPath = join(pagesDir, `${realSlug}.mdx`)
+
     const fileContents = fs.readFileSync(fullPath, 'utf8')
-    const matterResult = matter(fileContents)
 
-    const processedContent = await remark().use(remarkHtml).process(matterResult.content)
-
-    const contentHtml = processedContent.toString()
-
-    const pageContentHtml: Meta & { contentHtml: string } = {
-        id : slug,
-        title: matterResult.data.title,
-        date: matterResult.data.date,
-        tags: matterResult.data.tags,
-        contentHtml
+    const {frontmatter, content} = await compileMDX<{ title: string, date: string, tags: string[]}>(
+        {
+            source: fileContents,
+            components: {
+                Iframes,
+                Video,
+            },
+            options: {parseFrontmatter: true},
+        }
+    )
+    
+    const pageContent: PageContent = {
+        meta: {slug: realSlug, title: frontmatter.title, date: frontmatter.date, tags: frontmatter.tags},
+        content
     }
-  
-    return pageContentHtml
+
+    return pageContent
+
 }
