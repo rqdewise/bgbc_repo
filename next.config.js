@@ -1,7 +1,4 @@
 /** @type {import('next').NextConfig} */
-<<<<<<< HEAD
-const nextConfig = {
-=======
 
 const nextConfig = {
   images: {
@@ -12,7 +9,6 @@ const nextConfig = {
       },
     ]
   }
->>>>>>> ec2832a (major update)
 
 }
  

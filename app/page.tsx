@@ -1,18 +1,17 @@
-import {notFound} from "next/navigation"
 import WidgetServices from "@/components/widgetServices"
-import WidgetHeroBanner from "@/components/WidgetHeroBanner"
-import WidgetPlanVisit from "@/components/WidgetPlanVisit"
-import WidgetContact from "@/components/WidgetContact"
-import WidgetPastorBanner from "@/components/WidgetPastorBanner"
+import WidgetHeroBanner from "@/components/widgetHeroBanner"
+import WidgetContact from "@/components/widgetContact"
+import WidgetPastorBanner from "@/components/widgetPastorBanner"
+import { InfoTabs } from "@/components/info-tabs"
+
 export default function Home() {
   return (
       <>
         <WidgetHeroBanner />
-        <WidgetPlanVisit />
         <WidgetServices />
-        <WidgetContact />
+        <InfoTabs/>
         <WidgetPastorBanner />
-
+        <WidgetContact />
       </>
   )
 }
