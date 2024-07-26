@@ -59,7 +59,7 @@ export const InfoTabs = () => {
             ))}
           </TabsList>
             {tabcontent.map((content)=>(
-              <TabsContent value={content.value}>
+              <TabsContent key={content.value} value={content.value}>
                 <Card>
                   <CardHeader>
                     <CardTitle className='flex flex-col items-center justify-center gap-y-2 text-lg'>
