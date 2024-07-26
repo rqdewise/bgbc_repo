@@ -4,16 +4,6 @@ import React from "react"
 import Image from "next/image";
 import { Menu } from "lucide-react"
 
-import { Button } from "@/components/ui/button"
-
-// import {
-//     useParams,
-//     usePathname,
-//     useSelectedLayoutSegments,
-// } from "next/navigation"
-
-// import { ReactNode, useEffect, useMemo, useState } from "react";
-
 const links = [
     {
       name: "Confession of Faith",
