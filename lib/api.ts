@@ -1,9 +1,11 @@
 import fs from  'fs'
 import { join } from 'path'
 import { compileMDX } from 'next-mdx-remote/rsc'
+import PostImage from '@/components/post-image'
 import Iframes from '@/components/Iframes'
-import Video from '@/components/VideoIframe'
-
+import Video from '@/components/videoIframe'
+import SpanItalic from '@/components/span-italic'
+import { Separator } from '@/components/ui/separator'
 
 const pagesDir = join(process.cwd(), '_pages')
 
@@ -39,6 +41,9 @@ export async function getPageBySlug(slug: string){
             components: {
                 Iframes,
                 Video,
+                PostImage,
+                SpanItalic,
+                Separator,
             },
             options: {parseFrontmatter: true},
         }
@@ -48,7 +53,6 @@ export async function getPageBySlug(slug: string){
         meta: {slug: realSlug, title: frontmatter.title, date: frontmatter.date, tags: frontmatter.tags},
         content
     }
-
+    
     return pageContent
-
 }

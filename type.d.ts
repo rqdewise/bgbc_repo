@@ -21,3 +21,11 @@ type NavLink = {
     href: string,
     icon: string,
 }
+
+type Settings = {
+    sitename: string,
+    logo?: string,
+    phone?: string,
+    email?: string,
+    address?: string,
+}
