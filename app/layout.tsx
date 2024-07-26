@@ -2,8 +2,8 @@ import './globals.css'
 import type { Metadata } from 'next'
 
 import { Providers } from './providers'
-import Nav from '@/components/nav'
-import Footer from '@/components/footer'
+import Nav from '@/components/Nav'
+import Footer from '@/components/Footer'
 import {Poppins} from 'next/font/google'
 
 const title = "Bordergate Baptist Church Macau - Baptist Church at Macau SAR China"
