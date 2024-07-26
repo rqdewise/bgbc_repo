@@ -2,13 +2,10 @@
 import Link from "next/link"
 import Image from "next/image"
 import { 
-  Facebook, 
-  Twitter, 
-  Youtube, 
   Map, 
   PhoneIcon, 
   MailIcon,
-  ChevronsUpDown
+
 } from "lucide-react"
 
 import Container from "./container"

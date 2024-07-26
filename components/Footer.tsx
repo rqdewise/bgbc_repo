@@ -1,8 +1,62 @@
+'use client'
 import Link from "next/link"
 import Image from "next/image"
-import { Facebook, Twitter, Youtube} from "lucide-react"
+import { 
+  Map, 
+  PhoneIcon, 
+  MailIcon,
 
-export default function Footer() {
+} from "lucide-react"
+
+import Container from "./container"
+import { useMediaQuery } from "@/lib/use-media-query"
+
+export default function Footer(props:Settings) {
+  const isMobile = useMediaQuery("(max-width:1024px)");
+
+  // Footer Links 
+  const quicklinks = [
+    {
+      href: '/confession-of-faith',
+      label: 'Statement of Faith',
+    },
+    {
+      href: '/how-to-get-saved',
+      label: 'How To Get Saved',
+    },
+    {
+      href: '/every-christian-should-seek-to-answer',
+      label: 'Every Christian Should Seek To Answer',
+    },
+    {
+      href: '/confession-of-faith',
+      label: 'What We Believe',
+    },
+  ]
+
+  const pages = [
+    {
+      href: '/',
+      label: 'Adult Sunday School',
+    },
+    {
+      href: '/',
+      label: 'Children Sunday School',
+    },
+    {
+      href: '/',
+      label: 'Ladies Fellowship',
+    },
+    {
+      href: '/',
+      label: 'Training Men on the Ministry',
+    },
+    {
+      href: '/',
+      label: 'Online Bible Study',
+    },
+  ]
+  
   return (
     <footer className="relative bg-gray-900/90 text-gray-300">
         <div className="container mx-auto pb-10 pt-10">
