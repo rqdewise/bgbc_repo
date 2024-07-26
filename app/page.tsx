@@ -1,6 +1,6 @@
 import WidgetServices from "@/components/widgetServices"
-import WidgetHeroBanner from "@/components/widgetHeroBanner"
-import WidgetContact from "@/components/widgetContact"
+import WidgetHeroBanner from "@/components/WidgetHeroBanner"
+import WidgetContact from "@/components/WidgetContact"
 import WidgetPastorBanner from "@/components/widgetPastorBanner"
 import { InfoTabs } from "@/components/info-tabs"
 
