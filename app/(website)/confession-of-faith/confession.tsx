@@ -29,7 +29,7 @@ export const ConfessionOfFaith = () => {
 
         <h3>WHAT WE BELIEVE</h3>
 
-        <p>"…to set forth in order a declaration of those things which are most surely believed among us… Luke 1:1" Preaching the GOSPEL – Teaching the WORD – Contending for the FAITH</p>
+        <p>&quot;…to set forth in order a declaration of those things which are most surely believed among us… Luke 1:1&quot; Preaching the GOSPEL – Teaching the WORD – Contending for the FAITH</p>
    
     <h3>CONCERNING THE SCRIPTURES:</h3>
     
