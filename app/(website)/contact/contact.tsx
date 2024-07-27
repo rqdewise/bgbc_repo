@@ -64,9 +64,8 @@ export default function Contact( settings:Props) {
 
   return (
     <Container>
-      <section className="w-full py-14" >
-        <GoogleMap churchname="Bordergate Baptist Church" />
-      </section>
+      
+      <GoogleMap churchname="Bordergate Baptist Church" />
       <h1 className="mt-2 mb-3 text-3xl font-semibold tracking-tight text-center lg:leading-snug text-brand-primary lg:text-4xl dark:text-white">
         Contact
       </h1>

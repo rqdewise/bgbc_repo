@@ -52,7 +52,7 @@ export const InfoTabs = () => {
         <h3 className="text-4xl font-semibold mb-8 md:mb-20 text-center pt-10">
           Visitor for the first time? Begin here
         </h3>
-        <Tabs defaultValue="get-saved" className="grid md:grid-cols-2 gap-20 min-h-[450px]" >
+        <Tabs defaultValue="get-saved" className="grid md:grid-cols-2 gap-x-20 min-h-[450px]" >
           <TabsList >
             {tabcontent.map((tab)=>(
               <TabsTrigger key={tab.value} value={tab.value}><div className='flex flex-wrap items-center gap-3'>{tab.icon} <span className=' flex-shrink-1'>{tab.label}</span></div></TabsTrigger>

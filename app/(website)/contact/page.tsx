@@ -1,6 +1,7 @@
 import Contact from "./contact";
 
 import Container from "@/components/container";
+import { PageHeader } from '@/components/page-header'
 
 export default async function ContactPage() {
   const settings = {
@@ -10,8 +11,11 @@ export default async function ContactPage() {
     address: "No. 12 Rua do S. Jose, Edificio Hang Wan R/C,Macau SAR China",
   }
   return (
-    <Container>
-      <Contact {...settings} />
-    </Container>
+    <>
+      <PageHeader title="Keep In Touch" image='/images/herobanner.jpg'/>
+      <Container>
+        <Contact {...settings} />
+      </Container>
+    </>
   );
 }
