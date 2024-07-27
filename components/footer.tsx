@@ -161,7 +161,7 @@ export default function Footer(props:Settings) {
               rel="noopener"
               className="relative block w-44">
               <Image
-                src='/img/mybranches.svg'
+                src='/images/mybranches.svg'
                 alt="Powered by myBranches"
                 unoptimized={true}
                 width="150"

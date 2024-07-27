@@ -1,6 +1,7 @@
 import fs from  'fs'
 import { join } from 'path'
 import { compileMDX } from 'next-mdx-remote/rsc'
+
 import PostImage from '@/components/post-image'
 import Iframes from '@/components/Iframes'
 import Video from '@/components/videoIframe'
@@ -35,7 +36,7 @@ export async function getPageBySlug(slug: string){
 
     const fileContents = fs.readFileSync(fullPath, 'utf8')
 
-    const {frontmatter, content} = await compileMDX<{ title: string, date: string, tags: string[]}>(
+    const {frontmatter, content} = await compileMDX<{ title: string, description:string, date: string, tags: string[]}>(
         {
             source: fileContents,
             components: {
@@ -50,7 +51,7 @@ export async function getPageBySlug(slug: string){
     )
     
     const pageContent: PageContent = {
-        meta: {slug: realSlug, title: frontmatter.title, date: frontmatter.date, tags: frontmatter.tags},
+        meta: {slug: realSlug, title: frontmatter.title, description: frontmatter.description, date: frontmatter.date, tags: frontmatter.tags},
         content
     }
     
