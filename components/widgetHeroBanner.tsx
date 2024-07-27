@@ -13,7 +13,7 @@ export default function HeroBanner() {
 
   return (
     <section className="relative flex overflow-hidden ">
-      <div className="text-white/90 w-full container mx-auto items-baseline flex flex-wrap absolute bottom-0 md:bottom-40 left-0 z-10 ">
+      <div className="text-white/90 w-full container mx-auto items-baseline flex flex-wrap absolute bottom-0 lg:bottom-40 left-0 z-10 ">
         <div className="w-full md:w-8/12 px-4">
           <div className="pt-32 sm:pt-0 items-baseline">
             <h2 className="font-semibold hidden md:flex md:text-4xl drop-shadow-md">
