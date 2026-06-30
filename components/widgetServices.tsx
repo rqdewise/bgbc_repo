@@ -1,97 +1,139 @@
 "use client"
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Clock, CalendarDays, Monitor } from 'lucide-react'
 
-export default function widgetServices() {
+const serviceGroups = [
+  {
+    icon: <CalendarDays className="w-5 h-5 text-sky-500" />,
+    day: "Sunday",
+    items: [
+      {
+        time: "10:30 AM",
+        name: "Morning Worship Service",
+        note: "Nursery & Junior Church available (ages 4 – 4th grade). Youth class at 11:30 AM.",
+      },
+      {
+        time: "2:00 PM",
+        name: "Adult Sunday School",
+        note: "In-depth Bible study for adults.",
+      },
+      {
+        time: "4:00 PM",
+        name: "Afternoon Worship Service",
+        note: "",
+      },
+    ],
+  },
+  {
+    icon: <Clock className="w-5 h-5 text-sky-500" />,
+    day: "Wednesday",
+    items: [
+      {
+        time: "9:00 PM",
+        name: "Prayer Meeting",
+        note: "Mid-week gathering for prayer and fellowship.",
+      },
+    ],
+  },
+  {
+    icon: <Clock className="w-5 h-5 text-sky-500" />,
+    day: "Friday",
+    items: [
+      {
+        time: "9:00 PM",
+        name: "Prayer Vigil",
+        note: "Extended intercessory prayer time.",
+      },
+    ],
+  },
+  {
+    icon: <Monitor className="w-5 h-5 text-sky-500" />,
+    day: "Tuesday (Online)",
+    items: [
+      {
+        time: "Every Evening",
+        name: "Online Bible Study",
+        note: "Message us on Facebook to receive the Zoom link.",
+      },
+    ],
+  },
+]
+
+export default function WidgetServices() {
   return (
-    <section id="services" className="text-gray-950 py-20 gap-7">
-      <div className="container mx-auto ">
-        <div className="flex flex-wrap w-full">
-          <div className="w-full md:w-6/12 px-7 md:px-4 mr-auto">
-              <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-sky-500 text-white">
-                <Image 
-                  src="/images/herobanner.jpg"
-                  alt='bgbc congregation'
-                  width={500}
-                  height={500}
-                  className="w-full align-middle rounded-t-lg"
-                />
-                <blockquote className="relative p-8 mb-4">
-                  <svg
-                      preserveAspectRatio="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 583 95"
-                      className="absolute left-0 w-full block h-32 -top-32"
-                  >
-                    <polygon
-                    points="-30,95 583,95 583,65"
-                    className="text-sky-500 fill-current"
-                    ></polygon>
-                  </svg>
-                  <h4 className="text-xl font-bold text-white">
-                    Services
-                  </h4>
-                  <p className="text-md font-light mt-2 text-white">
-                  At Bordergate, you will find a warm and friendly atmosphere, uplifting music, and helpful Bible teaching and preaching
-                  </p>
-                  </blockquote>
-                  <div className="flex items-start mb-10 pl-8 text-base font-light transition-all delay-150">
-                    <Link 
-                        href="/time-location"
-                        className="group border-2 border-white/90 p-2 rounded-sm hover:bg-sky-600"
-                    >
-                        Learn More 
-                      <ArrowRight className="group-hover:ml-4 ml-2 inline-block"/>
-                    </Link>
-                  </div>
+    <section id="services" className="py-20 bg-white">
+      <div className="container mx-auto px-6 lg:px-8">
+        <div className="flex flex-col lg:flex-row gap-12 items-start">
+
+          {/* Image card */}
+          <div className="w-full lg:w-5/12 flex-shrink-0">
+            <div className="relative rounded-2xl overflow-hidden shadow-xl">
+              <Image
+                src="/images/herobanner.jpg"
+                alt="BGBC Congregation in worship"
+                width={600}
+                height={450}
+                className="w-full h-[380px] object-cover"
+              />
+              {/* Overlay card */}
+              <div className="absolute bottom-0 left-0 right-0 bg-sky-500 px-7 py-6">
+                <h4 className="text-xl font-bold text-white">Welcome to Our Services</h4>
+                <p className="text-sky-100 text-sm mt-1 leading-relaxed">
+                  A warm, friendly atmosphere with uplifting music and faithful Bible preaching.
+                </p>
+                <Link
+                  href="/time-location"
+                  className="mt-4 inline-flex items-center gap-2 border-2 border-white/70 text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-sky-600 transition-colors"
+                >
+                  Full Schedule <ArrowRight className="w-4 h-4" />
+                </Link>
               </div>
+            </div>
           </div>
-					<div className="w-full md:w-5/12 px-4 flex flex-col">
-						<div className="text-md my-4  text-gray-950">
-							<h3 className="text-xl text-gray-950 mt-2">
-								Sunday Worship Services
-							</h3>
-							<p className="text-gray-950">
-								<strong className="text-sky-500">10:30am</strong> Sunday Morning Worship. This service offers nursery facilities and Junior Church for those aged 4 through 4th grade. Youth class starts at 11:30 am.
-							</p>
-							<p className="text-gray-950">
-								<strong className="text-sky-500">4:00pm</strong> Sunday Afternoon Worship Service.
-							</p>
-						</div>
 
-						<div className="text-md my-4 text-gray-950">
-							<h3 className="text-xl text-gray-950 mt-2">
-									Weekdays Services
-							</h3>
-							<h5 className="text-gray-950 py-1">Wednesday Prayer Meeting :</h5>
-							<p className="text-gray-950">
-									<strong className="text-sky-500">9:00pm</strong> Sunday Morning Worship. This service offers nursery facilities and Junior Church for those aged 4 through 4th grade. Youth class starts at 11:30 am.
-							</p>
-							<h5 className="text-gray-950 py-1">Wednesday Prayer Vigil :</h5>
-							<p className="text-gray-950">
-									<strong className="text-sky-500">9:00pm </strong> Sunday Afternoon Worship Service.
-							</p>
-						</div>
+          {/* Schedule */}
+          <div className="w-full lg:w-7/12 space-y-8">
+            <div>
+              <h2 className="text-3xl font-bold text-slate-800">Service Times</h2>
+              <p className="text-slate-500 mt-2">
+                All services are held at{" "}
+                <span className="font-medium text-slate-700">
+                  No. 12 Rua do S. Jose, Macau SAR China
+                </span>
+              </p>
+            </div>
 
-						<div className="text-md my-4  text-gray-950">
-							<h3 className="text-xl  text-gray-950 mt-2">
-									Adult Sunday School
-							</h3>
-							<p className="text-gray-950">
-									<strong className="text-sky-500">2:00pm</strong> 
-							</p>
-						</div>
+            {serviceGroups.map((group) => (
+              <div key={group.day}>
+                <div className="flex items-center gap-2 mb-3">
+                  {group.icon}
+                  <h3 className="text-lg font-bold text-slate-800 uppercase tracking-wide">
+                    {group.day}
+                  </h3>
+                </div>
+                <div className="space-y-3 pl-1">
+                  {group.items.map((item) => (
+                    <div
+                      key={item.name}
+                      className="flex items-start gap-4 bg-gray-50 rounded-xl px-5 py-4 border border-gray-100"
+                    >
+                      <span className="flex-shrink-0 text-sky-500 font-bold text-sm min-w-[100px]">
+                        {item.time}
+                      </span>
+                      <div>
+                        <p className="font-semibold text-slate-800 text-sm">{item.name}</p>
+                        {item.note && (
+                          <p className="text-slate-500 text-xs mt-0.5 leading-relaxed">{item.note}</p>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
 
-						<div className="text-md my-4  text-gray-950">
-							<h3 className="text-xl mt-2 text-gray-950">
-									Online Bible Study
-							</h3>
-							<p className="text-gray-950">
-								<strong className="text-sky-500">Every Evening Tuesday</strong> Message us to join our online bible study
-							</p>
-						</div>
-					</div>
         </div>
       </div>
     </section>

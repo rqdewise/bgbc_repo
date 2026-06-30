@@ -2,125 +2,147 @@
 import Link from "next/link"
 import React from "react"
 import Image from "next/image";
-import { Menu } from "lucide-react"
+import { Menu, X, ChevronDown } from "lucide-react"
 
 const links = [
-    {
-      name: "Confession of Faith",
-      href: "./confession-of-faith",
-      Icon: "",
-    },
-    {
-      name: "About Us",
-      href: "./mission-vision",
-      Icon: "",
-      nested: [
-          {
-              name: "Our Story",
-              href: "./our-story",
-              Icon: "",
-          },
-          {
-              name: "From Our Pastor",
-              href: "./from-pastor",
-              Icon: "",
-          },
-          {
-              name: "Time And Location",
-              href: "./time-location",
-              Icon: "",
-          },
-          {
-              name: "Mission And Vision",
-              href: "./mission-vision",
-              Icon: "",
-            },
-        ],
-    },
-    {
-        name: "Our Story",
-        href: "./our-story",
-        Icon: "",
-    },
-    {
-      name: "Contact",
-      href: "./contact",
-      Icon: "",
-  }
+  {
+    name: "Home",
+    href: "/",
+  },
+  {
+    name: "About Us",
+    href: "/mission-vision",
+    nested: [
+      { name: "Our Story",        href: "/our-story" },
+      { name: "Mission & Vision", href: "/mission-vision" },
+      { name: "From Our Pastor",  href: "/from-pastor" },
+      { name: "Time & Location",  href: "/time-location" },
+    ],
+  },
+  {
+    name: "Ministries",
+    href: "/ministries",
+  },
+  {
+    name: "Beliefs",
+    href: "/confession-of-faith",
+    nested: [
+      { name: "Confession of Faith",    href: "/confession-of-faith" },
+      { name: "How To Get Saved",       href: "/how-to-get-saved" },
+      { name: "Biblical Teachings",     href: "/confession-of-faith" },
+    ],
+  },
+  {
+    name: "Contact",
+    href: "/contact",
+  },
 ]
 
 export default function Nav() {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
-  
+  const [openDropdown, setOpenDropdown] = React.useState<string | null>(null);
+
+  const toggleDropdown = (name: string) => {
+    setOpenDropdown(prev => (prev === name ? null : name));
+  };
+
   return (
-    <nav className="top-0 sticky z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg bg-white shadow ">
-      <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
-        <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
-          <Link
-            href="/"
-            className="text-lg font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase"
-          >
-              <Image
-                  src="/images/bgbc_logo.png"
-                  width={300}
-                  height={250}
-                  alt="Logo"
-                  className=" dark:scale-110 dark:border-stone-400"
-              />
-          </Link>
-          <button
-            className="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
-            type="button"
-            onClick={() => setNavbarOpen(!navbarOpen)}
-          >
-            <Menu />
-          </button>
-        </div>
-        <div
-          className={"lg:flex flex-grow items-center bg-white md:bg-opacity-0 lg:shadow-none " + (navbarOpen? "block":"hidden")}
+    <nav className="top-0 sticky z-50 w-full bg-white shadow-md">
+      <div className="container px-4 mx-auto flex items-center justify-between h-16 lg:h-20">
+        {/* Logo */}
+        <Link href="/" className="flex-shrink-0">
+          <Image
+            src="/images/bgbc_logo.png"
+            width={260}
+            height={220}
+            alt="Bordergate Baptist Church Logo"
+            className="h-12 lg:h-14 w-auto object-contain"
+          />
+        </Link>
+
+        {/* Desktop Navigation */}
+        <ul className="hidden lg:flex items-center gap-1">
+          {links.map((link) => (
+            <li key={link.name} className="relative group">
+              <Link
+                href={link.href}
+                className="flex items-center gap-1 px-3 py-2 text-sm font-semibold text-slate-700 uppercase tracking-wide hover:text-sky-500 transition-colors duration-150"
+              >
+                {link.name}
+                {link.nested && <ChevronDown className="w-3 h-3 mt-0.5 group-hover:rotate-180 transition-transform duration-200" />}
+              </Link>
+              {link.nested && (
+                <ul className="absolute left-0 top-full pt-1 hidden group-hover:block min-w-max bg-white rounded-lg shadow-xl border border-gray-100 py-2 z-50">
+                  {link.nested.map((sub) => (
+                    <li key={sub.href}>
+                      <Link
+                        href={sub.href}
+                        className="block px-5 py-2 text-sm text-slate-600 hover:text-sky-500 hover:bg-sky-50 transition-colors"
+                      >
+                        {sub.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
+          ))}
+        </ul>
+
+        {/* Mobile Toggle */}
+        <button
+          className="lg:hidden p-2 rounded-md text-slate-700 hover:bg-gray-100"
+          onClick={() => setNavbarOpen(!navbarOpen)}
+          aria-label="Toggle menu"
         >
-          <ul className="flex flex-col lg:flex-row list-none md:ml-auto text-md">
-            {links.map((link, index) => (
-              <li key= {index} className="group relative items-center">
-                <>
-                  <Link 
-                      href={link.href}
-                      className="hover:text-slate-500 text-slate-700 px-3 py-4 lg:py-2 flex items-center uppercase font-bold"
-                  > 
-                    {!link.Icon 
-                      ? " " :
-                      <Image 
-                          src={link.Icon}
-                          width={20}
-                          height={20}
-                          alt={link.name}
-                      />
-                    }
-                      {link.name}
+          {navbarOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
+      {navbarOpen && (
+        <div className="lg:hidden bg-white border-t border-gray-100 shadow-md">
+          <ul className="flex flex-col py-2">
+            {links.map((link) => (
+              <li key={link.name}>
+                <div className="flex items-center justify-between">
+                  <Link
+                    href={link.href}
+                    className="flex-1 px-5 py-3 text-sm font-semibold text-slate-700 uppercase tracking-wide hover:text-sky-500 hover:bg-sky-50"
+                    onClick={() => setNavbarOpen(false)}
+                  >
+                    {link.name}
                   </Link>
-                    {!(link.nested)? '':
-                    <ul className={"list-none group-hover:block bg-white p-4 lg:hidden lg:absolute lg:left-[-10px] lg:top-7 lg:shadow-md  lg:min-w-max " + (navbarOpen? "block":"hidden") }>
-                      {
-                        link.nested.map(
-                          (nestLink, index) => (
-                            <li key={index} className="text-sm font-semibold flex flex-row my-2">
-                              <Link
-                                  href={nestLink.href}
-                              >
-                                  {nestLink.name}
-                              </Link>
-                            </li>
-                          )
-                        )
-                      }
-                    </ul>
-                    }
-                  </>                          
-              </li> 
+                  {link.nested && (
+                    <button
+                      onClick={() => toggleDropdown(link.name)}
+                      className="px-4 py-3 text-slate-500"
+                      aria-label="Expand"
+                    >
+                      <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${openDropdown === link.name ? 'rotate-180' : ''}`} />
+                    </button>
+                  )}
+                </div>
+                {link.nested && openDropdown === link.name && (
+                  <ul className="bg-gray-50 pl-4 pb-2">
+                    {link.nested.map((sub) => (
+                      <li key={sub.href}>
+                        <Link
+                          href={sub.href}
+                          className="block px-5 py-2 text-sm text-slate-600 hover:text-sky-500"
+                          onClick={() => setNavbarOpen(false)}
+                        >
+                          {sub.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
             ))}
           </ul>
         </div>
-      </div>
+      )}
     </nav>
   )
 }

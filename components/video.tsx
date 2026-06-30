@@ -7,10 +7,14 @@ type Props = {
 
 export const Video:React.FC<Props> = ({videoSrc}) => {
   return (
-    <section className="flex items-center">
-      <video autoPlay loop muted >
-        <source src={videoSrc} type='video/mp4' className='h-screen md:h-auto' />
-      </video>
-    </section>
+    <video
+      autoPlay
+      loop
+      muted
+      playsInline
+      className="absolute inset-0 w-full h-full object-cover"
+    >
+      <source src={videoSrc} type="video/mp4" />
+    </video>
   )
 }

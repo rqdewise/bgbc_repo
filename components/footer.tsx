@@ -147,26 +147,18 @@ export default function Footer(props:Settings) {
 
       <Container className="mt-10 border-t border-gray-100/40 dark:border-gray-800">
         <div className="text-center text-sm">
-          Copyright © {new Date().getFullYear()} Bordergate Baptist. All
-          rights reserved.
+          Copyright © {new Date().getFullYear()} Bordergate Baptist. All rights reserved.
         </div>
-        <div className="mt-1 flex justify-center gap-1 text-center text-sm text-gray-500 dark:text-gray-600">
-          <span>&middot;</span>
-        </div>
-        <div className="mt-2 flex items-center justify-between">
-          <div className="mt-5">
+        <div className="mt-2 flex flex-col sm:flex-row items-center justify-between gap-4 pb-2">
+          <div className="text-sm text-gray-500 mt-3">
+            Designed &amp; Developed by{" "}
             <a
-              href="https://mybranches.net"
+              href="https://ralfdeleon-dev.vercel.app/"
               target="_blank"
-              rel="noopener"
-              className="relative block w-44">
-              <Image
-                src='/images/mybranches.svg'
-                alt="Powered by myBranches"
-                unoptimized={true}
-                width="150"
-                height="25"
-              />
+              rel="noopener noreferrer"
+              className="text-sky-400 font-medium hover:text-sky-300 transition-colors"
+            >
+              Ralf Quezar De Leon
             </a>
           </div>
         </div>

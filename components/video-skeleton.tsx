@@ -4,20 +4,20 @@ import { PlayIcon } from '@heroicons/react/24/solid'
 
 export const VideoFallback = () => {
   return (
-    <section className='w-full flex items-start justify-center transition-all'>
-      <div className='w-full min-h-[450px] h-full relative flex items-center justify-center overflow-hidden'>
-        <Image
-          src='/images/herobanner.jpg'
-          fill
-          alt="video fallback"
-          className="object-cover z-0"
-        />
-        <span className='z-20 text-white flex items-center justify-center'><PlayIcon className='w-14 h-14 animate-bounce text-sky-700'/>
-         Loading video...
+    <div className="absolute inset-0 w-full h-full">
+      <Image
+        src='/images/herobanner.jpg'
+        fill
+        alt="video fallback"
+        className="object-cover"
+        priority
+      />
+      <div className="absolute inset-0 bg-slate-700/40 flex items-center justify-center">
+        <span className="text-white flex items-center gap-2">
+          <PlayIcon className="w-10 h-10 animate-bounce text-sky-400" />
+          <span className="text-sm">Loading video...</span>
         </span>
-        <div className='w-full h-full bg-slate-700/40 absolute top-0 left-0'></div>
       </div>
-
-    </section>
+    </div>
   )
 }

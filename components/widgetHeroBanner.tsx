@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import { Suspense } from 'react'
-import { PlayIcon, BookMarked } from 'lucide-react'
+import { PlayCircle, BookMarked, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 
 import { useMediaQuery } from '@/lib/use-media-query'
@@ -9,40 +9,74 @@ import { VideoFallback } from './video-skeleton'
 import { Video } from './video'
 
 export default function HeroBanner() {
-  const isMobile = useMediaQuery("(max-width:728px)")
+  const isMobile = useMediaQuery("(max-width:768px)")
 
   return (
-    <section className="relative flex overflow-hidden ">
-      <div className="text-white/90 w-full container mx-auto items-baseline flex flex-wrap absolute bottom-0 lg:bottom-40 left-0 z-10 ">
-        <div className="w-full md:w-8/12 px-4">
-          <div className="pt-32 sm:pt-0 items-baseline">
-            <h2 className="font-semibold hidden md:flex md:text-4xl drop-shadow-md">
-              Preaching the GOSPEL – Teaching the WORD – Contending for the FAITH
-            </h2>
-            <p className="mt-4 text-sm hidden md:block md:text-xl leading-relaxed tracking-wide drop-shadow-md">
-              <strong>Bordergate Baptist Church &#40;BGBC&#41;</strong> is an independent, KJV Bible-believing, and Bible-teaching church.
+    <section className="relative flex overflow-hidden min-h-[92vh]">
+      {/* Gradient overlay — stronger at bottom for text legibility */}
+      <div className="absolute inset-0 z-10 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-slate-900/20 pointer-events-none" />
+
+      {/* Content */}
+      <div className="relative z-20 w-full flex items-end pb-20 lg:pb-32 lg:items-center">
+        <div className="container mx-auto px-6 lg:px-8">
+          <div className="max-w-3xl">
+            {/* Tagline pill */}
+            <div className="inline-flex items-center gap-2 bg-sky-500/20 border border-sky-400/40 text-sky-300 rounded-full px-4 py-1.5 text-sm font-medium tracking-wide mb-6 backdrop-blur-sm">
+              <span className="w-2 h-2 rounded-full bg-sky-400 animate-pulse inline-block" />
+              Independent Baptist Church · Macau SAR China
+            </div>
+
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight drop-shadow-lg">
+              Preaching the{" "}
+              <span className="text-sky-400">Gospel</span>
+              <br />
+              Teaching the{" "}
+              <span className="text-sky-400">Word</span>
+            </h1>
+
+            <p className="mt-6 text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl drop-shadow">
+              <strong className="text-white">Bordergate Baptist Church (BGBC)</strong> is an
+              independent, KJV Bible-believing, and Bible-teaching church in Macau SAR China.
+              You are welcome to join us in worship.
             </p>
-            <div className="flex md:mt-12 flex-row gap-2 items-center text-center">
+
+            <div className="mt-10 flex flex-wrap gap-4">
               <Link
-                href="./mission-vision"
-                className="text-white flex font-bold p-2 md:px-6 md:py-4  rounded outline-none focus:outline-none mx-1 mb-3 bg-gray-600 active:bg-gray-700 hover:bg-gray-700  uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
+                href="/mission-vision"
+                className="flex items-center gap-2 bg-sky-500 hover:bg-sky-600 text-white font-bold px-6 py-3 rounded-lg shadow-lg hover:shadow-sky-500/30 transition-all duration-200"
               >
-                { isMobile ? <BookMarked /> : "learn more" }
+                {isMobile ? <BookMarked className="w-5 h-5" /> : (
+                  <>Learn More <ArrowRight className="w-4 h-4" /></>
+                )}
               </Link>
+
               <a
-              href="https://www.facebook.com/bordergatebaptist/videos"
-              className="text-center mx-1 text-white font-bold p-2 md:px-6 md:py-4 rounded outline-none focus:outline-none mb-3 bg-sky-500 hover:bg-sky-600 active:bg-sky-600 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
-              target="_blank"
+                href="https://www.facebook.com/bordergatebaptist/videos"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/30 text-white font-bold px-6 py-3 rounded-lg backdrop-blur-sm transition-all duration-200"
               >
-                { isMobile ? <PlayIcon /> : "Watch Live Sermon" }
+                <PlayCircle className="w-5 h-5 text-sky-400" />
+                {isMobile ? "Watch" : "Watch Live Sermon"}
               </a>
-              { isMobile&& <h4>Learn more</h4> }
+            </div>
+
+            {/* Service time hint */}
+            <div className="mt-10 flex items-center gap-3 text-gray-400 text-sm">
+              <div className="w-8 h-px bg-gray-500" />
+              <span>Sundays at <strong className="text-white">10:30 AM</strong> &amp; <strong className="text-white">4:00 PM</strong></span>
+              <span className="mx-1 text-gray-600">·</span>
+              <Link href="/time-location" className="text-sky-400 hover:text-sky-300 transition-colors underline-offset-4 hover:underline">
+                See all services
+              </Link>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Background Video */}
       <Suspense fallback={<VideoFallback />}>
-        <Video 
+        <Video
           videoSrc="https://res.cloudinary.com/dh3h0lhyh/video/upload/f_auto:video,q_auto/v1/bgbc/s2vblzderwgzk33xeest"
         />
       </Suspense>
