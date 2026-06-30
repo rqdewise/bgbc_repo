@@ -49,7 +49,7 @@ export default function FromPastorPage() {
                 <div className="bg-sky-500 rounded-full p-2">
                   <Quote className="w-5 h-5 text-white" />
                 </div>
-                <h2 className="text-3xl font-semibold text-slate-800">Pastor's Welcome</h2>
+                <h2 className="text-3xl font-semibold text-slate-800">Pastor&apos;s Welcome</h2>
               </div>
 
               <div className="prose prose-lg prose-slate max-w-none space-y-5 text-slate-700 leading-relaxed">
@@ -60,11 +60,11 @@ export default function FromPastorPage() {
                 </p>
 
                 <blockquote className="border-l-4 border-sky-500 pl-6 text-xl italic text-slate-600 my-8">
-                  "As Pastor of Bordergate Baptist Church, I invite you to visit any of our services.
+                  &ldquo;As Pastor of Bordergate Baptist Church, I invite you to visit any of our services.
                   You will be able to participate in singing some of the wonderful old Hymns that have
                   blessed the hearts of Christians for many years. You will hear Bible-based preaching
                   from the old King James Version of the Bible. Each service makes the wonderful,
-                  life-giving truths of the Bible practical and relevant to your life."
+                  life-giving truths of the Bible practical and relevant to your life.&rdquo;
                 </blockquote>
 
                 <p>
@@ -100,8 +100,8 @@ export default function FromPastorPage() {
           {/* Scripture Banner */}
           <div className="mt-16 bg-sky-500 rounded-2xl px-8 py-10 text-white text-center">
             <p className="text-xl md:text-2xl font-light italic leading-relaxed">
-              "Preach the word; be instant in season, out of season; reprove, rebuke, exhort with
-              all longsuffering and doctrine."
+              &ldquo;Preach the word; be instant in season, out of season; reprove, rebuke, exhort with
+              all longsuffering and doctrine.&rdquo;
             </p>
             <p className="mt-4 font-semibold text-sky-100">— 2 Timothy 4:2 (KJV)</p>
           </div>
@@ -117,19 +117,19 @@ export default function FromPastorPage() {
               <h3 className="text-2xl font-bold text-slate-800">But first, the Bad News…</h3>
               <div className="mt-4 space-y-4">
                 <blockquote className="border-l-4 border-red-400 pl-5 italic text-slate-600">
-                  "…by one man sin entered into the world, and death by sin; and so death passed upon
-                  all men, for that all have sinned:" <strong>Romans 5:12</strong>
+                  &ldquo;…by one man sin entered into the world, and death by sin; and so death passed upon
+                  all men, for that all have sinned:&rdquo; <strong>Romans 5:12</strong>
                 </blockquote>
                 <blockquote className="border-l-4 border-red-400 pl-5 italic text-slate-600">
-                  "For the wages of sin is death…" <strong>Romans 6:23</strong>
+                  &ldquo;For the wages of sin is death…&rdquo; <strong>Romans 6:23</strong>
                 </blockquote>
                 <blockquote className="border-l-4 border-red-400 pl-5 italic text-slate-600">
-                  "I tell you, Nay: but, except ye repent, ye shall all likewise perish." <strong>Luke 13:3</strong>
+                  &ldquo;I tell you, Nay: but, except ye repent, ye shall all likewise perish.&rdquo; <strong>Luke 13:3</strong>
                 </blockquote>
               </div>
               <p className="mt-4 text-slate-700">
                 These Scriptures show the bad news about the evil results and consequences of our sins.
-                Every soul is consigned to an eternal, everlasting place of torment. If the Bible's
+                Every soul is consigned to an eternal, everlasting place of torment. If the Bible&apos;s
                 message stopped here the news would certainly not be good.
               </p>
             </div>
@@ -139,20 +139,20 @@ export default function FromPastorPage() {
               <h3 className="text-2xl font-bold text-sky-600">Now for the Good News!</h3>
               <p className="mt-4 text-slate-700">
                 I want to tell you the most wonderful news this world has ever been given. The Bible
-                term for "Good News" is the word "gospel." In 1 Corinthians 15:3-4, we find the
+                term for &ldquo;Good News&rdquo; is the word &ldquo;gospel.&rdquo; In 1 Corinthians 15:3-4, we find the
                 gospel defined:
               </p>
               <p className="mt-4 text-slate-700 font-medium">
-                How is His death "Good News"? He died for <em>us</em>!
+                How is His death &ldquo;Good News&rdquo;? He died for <em>us</em>!
               </p>
               <div className="mt-4 space-y-4">
                 <blockquote className="border-l-4 border-sky-500 pl-5 italic text-slate-600">
-                  "But God commendeth his love toward us, in that, while we are yet sinners, Christ
-                  died for us." <strong>Romans 5:8</strong>
+                  &ldquo;But God commendeth his love toward us, in that, while we are yet sinners, Christ
+                  died for us.&rdquo; <strong>Romans 5:8</strong>
                 </blockquote>
                 <blockquote className="border-l-4 border-sky-500 pl-5 italic text-slate-600">
-                  "For Christ also hath once suffered for sins, the just for the unjust, that He might
-                  bring us to God." <strong>1 Peter 3:18</strong>
+                  &ldquo;For Christ also hath once suffered for sins, the just for the unjust, that He might
+                  bring us to God.&rdquo; <strong>1 Peter 3:18</strong>
                 </blockquote>
               </div>
               <p className="mt-4 text-slate-700">
@@ -160,8 +160,8 @@ export default function FromPastorPage() {
                 might be forgiven!
               </p>
               <blockquote className="border-l-4 border-sky-500 pl-5 italic text-slate-600 mt-4">
-                "For he hath made him to be sin for us, who knew no sin; that we might be made the
-                righteousness of God in Him." <strong>2 Corinthians 5:21</strong>
+                &ldquo;For he hath made him to be sin for us, who knew no sin; that we might be made the
+                righteousness of God in Him.&rdquo; <strong>2 Corinthians 5:21</strong>
               </blockquote>
               <p className="mt-4 text-slate-700">
                 If you took all the good things that ever came your way in this life and were able to
@@ -172,7 +172,7 @@ export default function FromPastorPage() {
               </p>
               <p className="mt-4 text-slate-700">
                 My friend, Jesus died for your sins and arose from the grave so that you could be
-                saved. Do you want to be saved? God's plan of Salvation is simple.
+                saved. Do you want to be saved? God&apos;s plan of Salvation is simple.
               </p>
             </div>
 
@@ -189,11 +189,11 @@ export default function FromPastorPage() {
                 </p>
                 <div className="mt-4 space-y-3">
                   <blockquote className="border-l-4 border-sky-500 pl-5 italic text-slate-600">
-                    "…There is none righteous, no not one…For there is no difference…For all have
-                    sinned, and come short of the glory of God." <strong>Romans 3:10, 22, 23</strong>
+                    &ldquo;…There is none righteous, no not one…For there is no difference…For all have
+                    sinned, and come short of the glory of God.&rdquo; <strong>Romans 3:10, 22, 23</strong>
                   </blockquote>
                   <blockquote className="border-l-4 border-sky-500 pl-5 italic text-slate-600">
-                    "And it is appointed unto men once to die, but after this the judgment."
+                    &ldquo;And it is appointed unto men once to die, but after this the judgment.&rdquo;
                     <strong> Hebrews 9:27</strong>
                   </blockquote>
                 </div>
@@ -204,19 +204,19 @@ export default function FromPastorPage() {
                   2. You Must Realize You Have No Hope Outside of the Gospel of Christ
                 </h4>
                 <p className="text-slate-700">
-                  For God says, "…All our righteousness are as filthy rags…" Isaiah 64:6
+                  For God says, &ldquo;…All our righteousness are as filthy rags…&rdquo; Isaiah 64:6
                 </p>
                 <p className="mt-3 text-slate-700">
                   No other person or thing can save.
                 </p>
                 <div className="mt-4 space-y-3">
                   <blockquote className="border-l-4 border-sky-500 pl-5 italic text-slate-600">
-                    "Neither is there salvation in any other: for there is none other name under Heaven
-                    given among men whereby we must be saved." <strong>Acts 4:12</strong>
+                    &ldquo;Neither is there salvation in any other: for there is none other name under Heaven
+                    given among men whereby we must be saved.&rdquo; <strong>Acts 4:12</strong>
                   </blockquote>
                   <blockquote className="border-l-4 border-sky-500 pl-5 italic text-slate-600">
-                    "For the wages of sin is death; but the gift of God is eternal life through Jesus
-                    Christ our Lord." <strong>Romans 6:23</strong>
+                    &ldquo;For the wages of sin is death; but the gift of God is eternal life through Jesus
+                    Christ our Lord.&rdquo; <strong>Romans 6:23</strong>
                   </blockquote>
                 </div>
                 <p className="mt-4 text-slate-700">
@@ -224,8 +224,8 @@ export default function FromPastorPage() {
                   your sins.
                 </p>
                 <blockquote className="border-l-4 border-sky-500 pl-5 italic text-slate-600 mt-4">
-                  "For God so loved the world, that He gave His only begotten Son, that whosoever
-                  believeth in Him should not perish, but have everlasting life." <strong>John 3:16</strong>
+                  &ldquo;For God so loved the world, that He gave His only begotten Son, that whosoever
+                  believeth in Him should not perish, but have everlasting life.&rdquo; <strong>John 3:16</strong>
                 </blockquote>
               </div>
 
@@ -235,8 +235,8 @@ export default function FromPastorPage() {
                 </h4>
                 <p className="text-slate-700">The word of God commands us to repent.</p>
                 <blockquote className="border-l-4 border-sky-500 pl-5 italic text-slate-600 mt-4">
-                  "Repent ye therefore, and be converted, that your sins may be blotted out, when the
-                  times of refreshing shall come from the presence of the Lord." <strong>Acts 3:19</strong>
+                  &ldquo;Repent ye therefore, and be converted, that your sins may be blotted out, when the
+                  times of refreshing shall come from the presence of the Lord.&rdquo; <strong>Acts 3:19</strong>
                 </blockquote>
                 <p className="mt-4 text-slate-700">
                   To repent means to be willing to turn from your sins and turn to the Lord, simply
@@ -251,22 +251,22 @@ export default function FromPastorPage() {
                   Will You Come to Him Now?
                 </h4>
                 <blockquote className="border-l-4 border-white/50 pl-5 italic text-sky-100 mb-4">
-                  Jesus said, "…repent ye, and believe the gospel." <strong>Mark 1:15</strong>
+                  Jesus said, &ldquo;…repent ye, and believe the gospel.&rdquo; <strong>Mark 1:15</strong>
                 </blockquote>
                 <p className="text-sky-100 mb-4">
                   If you are honestly willing to repent, just turn your heart to God in prayer. He
-                  alone is able to save you. Won't you call out to the God of Heaven now as the
+                  alone is able to save you. Won&apos;t you call out to the God of Heaven now as the
                   following verses invite you to do?
                 </p>
                 <div className="space-y-3">
                   <blockquote className="border-l-4 border-white/50 pl-5 italic text-sky-100">
-                    "That if thou shalt confess with thy mouth the Lord Jesus, and shalt believe in
+                    &ldquo;That if thou shalt confess with thy mouth the Lord Jesus, and shalt believe in
                     thine heart that God hath raised him from the dead, thou shalt be saved. For with
                     the heart man believeth unto righteousness; and with the mouth confession is made
-                    unto salvation." <strong>Romans 10:9-10</strong>
+                    unto salvation.&rdquo; <strong>Romans 10:9-10</strong>
                   </blockquote>
                   <blockquote className="border-l-4 border-white/50 pl-5 italic text-sky-100">
-                    "For whosoever shall call upon the name of the Lord shall be saved."
+                    &ldquo;For whosoever shall call upon the name of the Lord shall be saved.&rdquo;
                     <strong> Romans 10:13</strong>
                   </blockquote>
                 </div>
@@ -280,8 +280,8 @@ export default function FromPastorPage() {
 
             {/* Closing */}
             <p className="mt-10 text-slate-700">
-              My friend, won't you trust what God has said in His Word? I hope you will. Please
-              contact us if we can help you further understand God's wonderful Word. We would be
+              My friend, won&apos;t you trust what God has said in His Word? I hope you will. Please
+              contact us if we can help you further understand God&apos;s wonderful Word. We would be
               happy to answer your questions! We have prepared a private Bible Study workbook for
               you, which explain the truths presented above in fuller detail. We would gladly give
               this to you upon request.

@@ -48,10 +48,10 @@ export default function MissionVisionPage() {
           />
           <div className="max-w-3xl mx-auto mt-8 text-center">
             <blockquote className="text-2xl font-light text-slate-600 italic leading-relaxed border-l-4 border-sky-500 pl-6 text-left">
-              "Go ye therefore, and teach all nations, baptizing them in the Name of the Father,
+              &ldquo;Go ye therefore, and teach all nations, baptizing them in the Name of the Father,
               and of the Son, and of the Holy Ghost. Teaching them to observe all things
               whatsoever I have commanded you; and lo, I am with you alway, even unto the end
-              of the world. Amen."
+              of the world. Amen.&rdquo;
             </blockquote>
             <p className="mt-4 text-right text-slate-500 font-semibold">— Matthew 28:19-20 (KJV)</p>
             <p className="mt-10 text-lg text-slate-700 leading-relaxed">
@@ -82,7 +82,7 @@ export default function MissionVisionPage() {
               advancement of His Kingdom.
             </p>
             <p className="text-sky-400 font-semibold text-xl">
-              "The best days of Bordergate Baptist Church are ahead of us."
+              &ldquo;The best days of Bordergate Baptist Church are ahead of us.&rdquo;
             </p>
           </div>
         </section>

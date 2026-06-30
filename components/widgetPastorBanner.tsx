@@ -74,7 +74,7 @@ export default function WidgetPastorBanner() {
               {/* Scripture */}
               <div className="mt-8 border-l-4 border-sky-500 pl-5 py-1">
                 <p className="text-slate-500 italic text-sm">
-                  "Preach the word; be instant in season, out of season..."
+                  &ldquo;Preach the word; be instant in season, out of season...&rdquo;
                 </p>
                 <p className="text-slate-400 text-xs mt-1">— 2 Timothy 4:2 (KJV)</p>
               </div>
