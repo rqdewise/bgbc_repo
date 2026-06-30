@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default async function NotFound() {
-  const headersList = headers();
+  const headersList = await headers();
   const referer = headersList.get('referer')
 
   return (

@@ -9,15 +9,15 @@ import { ArticleHeading } from '@/components/aritcle-heading'
 
 export function generateStaticParams(){
   const pages = getPageSlugs()
-  return pages.map( page =>{
+  return pages.map(page => ({
     pageId: page.slug
-  })
+  }))
 }
 
-export function generateMetadata({ params } : {params:{ pageId:string }} ){
-  const pageReq = params.pageId
+export async function generateMetadata({ params } : {params: Promise<{ pageId:string }> } ){
+  const { pageId } = await params
   const pages = getPageSlugs()
-  const findPage = pages.find(page => page.slug === pageReq )
+  const findPage = pages.find(page => page.slug === pageId)
 
   if (!findPage) {
     return {
@@ -29,13 +29,13 @@ export function generateMetadata({ params } : {params:{ pageId:string }} ){
   }
 }
 
-export default async function CustomPage({ params, }:{ params:{pageId:string} }) {
-
+export default async function CustomPage({ params, }:{ params: Promise<{pageId:string}> }) {
+  const { pageId } = await params
   const pages = getPageSlugs()
-  
-  if (!pages.find(page => page.slug === params.pageId)) notFound()
 
-  const {meta, content} = await getPageBySlug(params.pageId)
+  if (!pages.find(page => page.slug === pageId)) notFound()
+
+  const {meta, content} = await getPageBySlug(pageId)
 
   return (
     <main className="text-slate-800 w-full flex flex-wrap items-center">

@@ -4,7 +4,7 @@ import { PhotoIcon } from '@heroicons/react/24/solid'
 type Props = {
   title: string,
   description?: string,
-  Icon?: JSX.Element ,
+  Icon?: React.JSX.Element ,
 }
 
 export const ArticleHeading: React.FC<Props> = ({ title, description, Icon }) => {
