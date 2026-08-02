@@ -54,7 +54,7 @@ const serviceGroups = [
       {
         time: "Every Evening",
         name: "Online Bible Study",
-        note: "Message us on Facebook to receive the Zoom link.",
+        note: "Contact us on Facebook.",
       },
     ],
   },
