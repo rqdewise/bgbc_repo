@@ -156,7 +156,7 @@ export default function TeachingPage() {
   const navigate = (id: string) => { setActive(id); setTocOpen(false); setMenuOpen(false); anchor(id) }
   return <div className="site-shell">
     <div className="reading-progress" aria-hidden="true"><span style={{ width: `${progress}%` }} /></div>
-    <header className="site-header">
+    {/* <header className="site-header">
       <div className="header-inner">
         <Link href="https://www.bordergatebaptist.net/" className="brand" aria-label="Bordergate Baptist Church home"><Image src="/bgbc-logo.png" alt="Bordergate Baptist Church" width={930} height={222} priority /></Link>
         <nav className="desktop-nav" aria-label="Main navigation">
@@ -166,7 +166,7 @@ export default function TeachingPage() {
         <button className="menu-toggle" aria-label={menuOpen ? "Close navigation" : "Open navigation"} aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X /> : <Menu />}</button>
       </div>
       {menuOpen && <nav className="mobile-nav" aria-label="Mobile navigation"><Link href="https://www.bordergatebaptist.net/">Home</Link><Link href="https://www.bordergatebaptist.net/mission-vision">About Us</Link><Link href="https://www.bordergatebaptist.net/our-story">Our Story</Link><Link href="https://www.bordergatebaptist.net/ministries">Ministries</Link><Link href="https://www.bordergatebaptist.net/confession-of-faith">Beliefs</Link><Link href="https://www.bordergatebaptist.net/how-to-get-saved">How To Get Saved</Link><Link href="https://www.bordergatebaptist.net/contact">Contact</Link></nav>}
-    </header>
+    </header> */}
 
     <main>
       <div className="breadcrumb-wrap"><nav aria-label="Breadcrumb" className="breadcrumb"><Link href="https://www.bordergatebaptist.net/">Home</Link><span>/</span><Link href="https://www.bordergatebaptist.net/confession-of-faith">Resources</Link><span>/</span><span aria-current="page">Every Christian Should Seek To Answer</span></nav></div>
@@ -212,7 +212,6 @@ export default function TeachingPage() {
       </div>
     </main>
 
-    <footer className="site-footer"><div className="footer-inner"><div className="footer-brand"><Image src="/bgbc-logo.png" alt="Bordergate Baptist Church" width={930} height={222} /><p>Preaching the Gospel<br />Teaching the Word</p></div><div className="footer-info"><h2>Bordergate Baptist Church</h2><address>No. 12 Rua do S. Jose,<br />Edificio Hang Wan R/C,<br />Macau SAR China</address></div><div className="footer-contact"><h2>Contact</h2><a href="tel:+85328782305">+853 2878 2305</a><a href="mailto:bdgate@macau.ctm.net">bdgate@macau.ctm.net</a></div></div><div className="footer-bottom"><span>© Bordergate Baptist Church</span><nav aria-label="Footer navigation"><Link href="https://www.bordergatebaptist.net/mission-vision">About Us</Link><Link href="https://www.bordergatebaptist.net/confession-of-faith">Beliefs</Link><Link href="https://www.bordergatebaptist.net/contact">Contact</Link></nav></div></footer>
     <button className={`back-to-top ${progress > 12 ? "visible" : ""}`} onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} aria-label="Back to top" disabled={progress <= 12}><ArrowUp size={19} /></button>
   </div>
 }
