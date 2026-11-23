@@ -202,8 +202,6 @@ export default function TeachingPage() {
           <ChurchDocumentSection eyebrow="05 · Our shared promise" title="Church Covenant" id="covenant" blocks={blocks} start={sections.covenant + 1} end={sections.faith - 1} />
           <ChurchDocumentSection eyebrow="06 · What we believe" title="A Condensed Statement of Our Confession of Faith" id="confession-faith" blocks={blocks} start={sections.faith + 2} end={sections.welcome - 1} />
 
-          <aside className="editorial-note" aria-label="Manuscript editorial note"><strong>Manuscript note</strong><p>The uploaded manuscript has been preserved as supplied. Several apparent scanning or transcription irregularities—including “shine heart,” “God bath,” “baptism cloth,” “towardGod,” “Her salvation,” and the attribution “Peter 3:21”—are retained and may need review against the intended source.</p></aside>
-
           <section className="content-section final-welcome" id="welcome">
             <SectionHeading eyebrow="07 · Welcome to the family" title="A Special Welcome to New Members" id="welcome-heading" />
             <p className="welcome-scripture">Romans 12:1–2</p>
