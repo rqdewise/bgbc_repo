@@ -185,6 +185,84 @@ button { font: inherit; }
 .back-to-top { position: fixed; z-index: 30; right: 24px; bottom: 23px; display: grid; width: 42px; height: 42px; place-items: center; border: 1px solid #d6e2e6; border-radius: 50%; background: #fff; color: #3a8199; box-shadow: 0 4px 14px rgba(34,58,71,.08); opacity: 0; pointer-events: none; transform: translateY(8px); transition: .2s ease; cursor: pointer; }
 .back-to-top.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
 
+@media (max-width: 900px) {
+  .header-inner { width: min(100% - 36px, 760px); }
+  .desktop-nav { gap: 0; }
+  .desktop-nav > a, .nav-dropdown > a { padding: 0 9px; font-size: 10px; }
+  .brand { width: 180px; }
+  .reading-layout { grid-template-columns: 196px minmax(0, 1fr); gap: 38px; }
+  .hero-mark { margin-right: 10px; }
+}
+@media (max-width: 700px) {
+  .desktop-break { display: none; }
+  html { scroll-padding-top: 5.3rem; }
+  .header-inner { width: calc(100% - 34px); height: 64px; }
+  .brand { width: 177px; }
+  .desktop-nav { display: none; }
+  .menu-toggle { display: grid; width: 42px; height: 42px; place-items: center; border: 1px solid #e4ecef; background: #fff; color: #426373; cursor: pointer; }
+  .mobile-nav { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; padding: 6px 17px 15px; border-top: 1px solid #eef1f2; background: #fff; }
+  .mobile-nav a { padding: 10px; color: #566674; font-size: 12px; }
+  .mobile-nav a:hover { background: #f2f8fa; color: #2788ae; }
+  .breadcrumb-wrap { width: calc(100% - 34px); }
+  .breadcrumb { min-height: 42px; gap: 7px; font-size: 10px; }
+  .hero-inner { width: calc(100% - 36px); min-height: auto; padding: 41px 0 43px; }
+  .hero h1 { max-width: 570px; font-size: clamp(32px, 8vw, 43px); }
+  .hero-mark { display: none; }
+  .hero-question { margin-top: 18px; font-size: 17px; }
+  .reading-layout { display: block; width: calc(100% - 36px); padding: 30px 0 65px; }
+  .toc-sidebar { display: none; }
+  .reading-content { max-width: none; }
+  .mobile-toc { position: relative; z-index: 10; display: block; margin-bottom: 35px; border: 1px solid #e1e9ec; background: #fff; }
+  .mobile-toc-trigger { display: flex; width: 100%; align-items: center; justify-content: space-between; padding: 13px 15px; border: 0; background: transparent; color: #3f5868; font-size: 12px; font-weight: 700; cursor: pointer; }
+  .mobile-toc-trigger span { display: flex; align-items: center; gap: 10px; }
+  .toc-mobile-list { display: grid; max-height: 52vh; overflow: auto; padding: 5px 12px 12px; border-top: 1px solid #edf1f3; }
+  .toc-mobile-list .toc-link { padding: 8px 9px; }
+  .content-section { margin-bottom: 57px; scroll-margin-top: 82px; }
+  .section-heading { margin-bottom: 21px; }
+  .section-heading h2 { font-size: 30px; }
+  .source-paragraph { font-size: 13px; line-height: 1.8; }
+  .worksheet-date > div { gap: 11px; }
+  .worksheet-name { grid-template-columns: 76px minmax(0, 1fr); gap: 9px; }
+  .section-body { padding-left: 14px; }
+  .lesson-grid { grid-template-columns: 1fr; gap: 8px; margin: 20px 0 33px; }
+  .lesson-card { min-height: 75px; }
+  .lesson-section { padding: 23px 0 20px; scroll-margin-top: 82px; }
+  .lesson-section-heading { gap: 11px; margin-bottom: 16px; }
+  .lesson-section-heading h3 { font-size: 21px; }
+  .lesson-section .source-paragraph, .lesson-original-title { margin-left: 0; }
+  .lesson-section .source-scripture { margin-left: 0; }
+  .source-list { font-size: 13px; }
+  .remember-section { padding: 23px 18px; }
+  .remember-section .section-heading h2 { font-size: 28px; }
+  .document-copy { padding: 19px 16px; }
+  .document-copy .source-paragraph { font-size: 12px; line-height: 1.8; }
+  .final-welcome { padding: 24px 20px; }
+  .footer-inner { width: calc(100% - 36px); grid-template-columns: 1fr 1fr; gap: 30px 20px; padding: 39px 0 30px; }
+  .footer-brand { grid-column: 1 / -1; }
+  .footer-brand img { width: 185px; }
+  .footer-bottom { width: calc(100% - 36px); align-items: flex-start; flex-direction: column; padding: 14px 0 18px; }
+  .footer-bottom nav { gap: 16px; }
+  .back-to-top { right: 14px; bottom: 14px; width: 38px; height: 38px; }
+}
+@media print {
+  .site-header, .breadcrumb-wrap, .hero-mark, .toc-sidebar, .mobile-toc, .lesson-grid, .reading-progress, .back-to-top, .editorial-note { display: none !important; }
+  .hero { background: #fff; }
+  .hero-inner, .reading-layout { display: block; width: 100%; min-height: 0; padding: 0; }
+  .hero h1, .section-heading h2, .lesson-section-heading h3 { color: #000; }
+  .reading-content { max-width: none; }
+  .source-paragraph, .document-copy .source-paragraph, .source-list, .source-scripture { color: #111; }
+  .source-scripture, .remember-section, .final-welcome { background: #fff; }
+  .worksheet-name, .worksheet-date legend, .worksheet-date label { color: #111; }
+  .worksheet-name input, .worksheet-date input { color: #111; border-color: #555; }
+  .site-footer { background: #fff; }
+  a { color: #000; text-decoration: none; }
+  .section-heading, .lesson-section-heading { break-after: avoid; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+}
+
 @layer base {
   * {
     @apply border-border;

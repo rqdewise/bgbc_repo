@@ -1,5 +1,5 @@
 import './globals.css'
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 
 import { Providers } from './providers'
 import Nav from '@/components/nav'
@@ -16,6 +16,10 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title,
   description,
+}
+export const viewport: Viewport = {
+  colorScheme: 'light',
+  themeColor: '#ffffff',
 }
 
 export default function RootLayout({
